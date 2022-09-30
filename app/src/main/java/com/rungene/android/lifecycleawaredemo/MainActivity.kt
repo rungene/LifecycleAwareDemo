@@ -19,6 +19,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        lifecycle.addObserver(MainLifecycleObserver())
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
