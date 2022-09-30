@@ -1,6 +1,7 @@
 package com.rungene.android.lifecycleawaredemo
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        Log.i(TAG, "Owner onCreate")
         lifecycle.addObserver(MainActivityObserver())
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -34,6 +36,9 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+    }
+    companion object{
+        private val TAG:String = MainActivity::class.java.simpleName
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
