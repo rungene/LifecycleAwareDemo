@@ -37,6 +37,31 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i(TAG, "Owner onStart")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i(TAG, "Owner onPause")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i(TAG, "Owner onResume")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(TAG, "Owner onDestroy")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i(TAG, "Owner onStop")
+    }
     companion object{
         private val TAG:String = MainActivity::class.java.simpleName
     }
